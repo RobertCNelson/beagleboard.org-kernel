@@ -108,7 +108,14 @@ make_kernel () {
 make_pkg () {
 	cd ${DIR}/KERNEL/
 
-	deployfile="-${pkg}.tar.gz"
+	#FIXME: xz might not be available everywhere...
+
+	deployfile="-${pkg}.tar.xz"
+	tar_options="--create --xz --file"
+
+	#deployfile="-${pkg}.tar.gz"
+	#tar_options="--create --gzip --file"
+
 	if [ -f "${DIR}/deploy/${KERNEL_UTS}${deployfile}" ] ; then
 		rm -rf "${DIR}/deploy/${KERNEL_UTS}${deployfile}" || true
 	fi
@@ -135,7 +142,7 @@ make_pkg () {
 
 	echo "Compressing ${KERNEL_UTS}${deployfile}..."
 	cd ${DIR}/deploy/tmp
-	tar czf ../${KERNEL_UTS}${deployfile} *
+	tar ${tar_options} ../${KERNEL_UTS}${deployfile} *
 
 	if [ ${AUTO_BUILD} ] ; then
 		cp -v ../${KERNEL_UTS}${deployfile} "${DIR}/deploy/beagleboard.org/${KERNEL_UTS}/"
