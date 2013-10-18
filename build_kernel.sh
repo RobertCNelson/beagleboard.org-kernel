@@ -108,13 +108,15 @@ make_kernel () {
 make_pkg () {
 	cd ${DIR}/KERNEL/
 
-	#FIXME: xz might not be available everywhere...
+	deployfile="-${pkg}.tar.gz"
+	tar_options="--create --gzip --file"
 
-	deployfile="-${pkg}.tar.xz"
-	tar_options="--create --xz --file"
-
-	#deployfile="-${pkg}.tar.gz"
-	#tar_options="--create --gzip --file"
+	if [ "${AUTO_BUILD}" ] ; then
+		#FIXME: xz might not be available everywhere...
+		#FIXME: ./tools/install_kernel.sh needs update...
+		deployfile="-${pkg}.tar.xz"
+		tar_options="--create --xz --file"
+	fi
 
 	if [ -f "${DIR}/deploy/${KERNEL_UTS}${deployfile}" ] ; then
 		rm -rf "${DIR}/deploy/${KERNEL_UTS}${deployfile}" || true
@@ -243,7 +245,7 @@ make_firmware_pkg
 if [ "x${DTBS}" != "x" ] ; then
 	make_dtbs_pkg
 fi
-if [ ${AUTO_BUILD} ] ; then
+if [ "${AUTO_BUILD}" ] ; then
 	update_latest
 fi
 echo "-----------------------------"
