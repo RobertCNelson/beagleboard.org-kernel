@@ -88,8 +88,8 @@ make_kernel () {
 	if [ -f ./arch/arm/boot/${image} ] ; then
 		if [ ${AUTO_BUILD} ] ; then
 			mkdir -p "${DIR}/deploy/beagleboard.org/${KERNEL_UTS}/" || true
-			cp -v arch/arm/boot/${image} "${DIR}/deploy/beagleboard.org/${KERNEL_UTS}/${KERNEL_UTS}.${image}"
-			cp -v .config "${DIR}/deploy/beagleboard.org/${KERNEL_UTS}/${KERNEL_UTS}.config"
+			cp -uv arch/arm/boot/${image} "${DIR}/deploy/beagleboard.org/${KERNEL_UTS}/${KERNEL_UTS}.${image}"
+			cp -uv .config "${DIR}/deploy/beagleboard.org/${KERNEL_UTS}/${KERNEL_UTS}.config"
 		fi
 		cp -v arch/arm/boot/${image} "${DIR}/deploy/${KERNEL_UTS}.${image}"
 		cp -v .config "${DIR}/deploy/${KERNEL_UTS}.config"
@@ -145,7 +145,7 @@ make_pkg () {
 	tar ${tar_options} ../${KERNEL_UTS}${deployfile} *
 
 	if [ ${AUTO_BUILD} ] ; then
-		cp -v ../${KERNEL_UTS}${deployfile} "${DIR}/deploy/beagleboard.org/${KERNEL_UTS}/"
+		cp -uv ../${KERNEL_UTS}${deployfile} "${DIR}/deploy/beagleboard.org/${KERNEL_UTS}/"
 	fi
 
 	cd ${DIR}/
@@ -172,6 +172,13 @@ make_firmware_pkg () {
 make_dtbs_pkg () {
 	pkg="dtbs"
 	make_pkg
+}
+
+update_latest () {
+	touch "${DIR}/deploy/beagleboard.org/latest"
+	echo "#!/bin/sh -e" >> "${DIR}/deploy/beagleboard.org/latest"
+	echo "abi=aaa" >> "${DIR}/deploy/beagleboard.org/latest"
+	echo "kernel=${KERNEL_UTS}" >> "${DIR}/deploy/beagleboard.org/latest"
 }
 
 /bin/sh -e ${DIR}/tools/host_det.sh || { exit 1 ; }
@@ -235,6 +242,9 @@ make_modules_pkg
 make_firmware_pkg
 if [ "x${DTBS}" != "x" ] ; then
 	make_dtbs_pkg
+fi
+if [ ${AUTO_BUILD} ] ; then
+	update_latest
 fi
 echo "-----------------------------"
 echo "Script Complete"
