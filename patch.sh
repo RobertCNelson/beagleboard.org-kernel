@@ -183,6 +183,11 @@ deassert_hard_reset () {
 	${git} "${DIR}/patches/deassert-hard-reset/0001-ARM-omap-add-DT-support-for-deasserting-hardware-res.patch"
 }
 
+cape_import () {
+	echo "dir: cape-import"
+	${git} "${DIR}/patches/cape-import/0001-capes-import-from-3.8.patch"
+}
+
 ###
 omap_next_dt
 dma_devel
@@ -201,5 +206,6 @@ capes
 lcdc_fixes
 net
 deassert_hard_reset
+cape_import
 
 echo "patch.sh ran successful"
