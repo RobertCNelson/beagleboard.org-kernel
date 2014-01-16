@@ -1,4 +1,4 @@
-From 4a7e7af6e09dbd27299bb7e0689537ffac15914e Mon Sep 17 00:00:00 2001
+From c8d3bb2242415f5efef8b10c192c499adf8586b6 Mon Sep 17 00:00:00 2001
 From: Pantelis Antoniou <panto@antoniou-consulting.com>
 Date: Fri, 28 Dec 2012 20:56:48 +0200
 Subject: [PATCH 01/11] capemgr: Capemgr makefiles and Kconfig fragments.
@@ -107,5 +107,5 @@ index 0000000..5b4549f
 +
 +obj-$(CONFIG_CAPE_BEAGLEBONE)		+= capemgr.o
 -- 
-1.8.4.rc3
+1.8.2.1
 

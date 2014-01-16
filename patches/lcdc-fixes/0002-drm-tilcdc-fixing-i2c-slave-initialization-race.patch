@@ -1,4 +1,4 @@
-From 10d8f3f63052e11da4275f9dd0ad2ef51bb28f93 Mon Sep 17 00:00:00 2001
+From 29ab9d4e1ce2ce74790b5921bdc311c81c5664e3 Mon Sep 17 00:00:00 2001
 From: Darren Etheridge <detheridge@ti.com>
 Date: Fri, 21 Jun 2013 13:52:27 -0500
 Subject: [PATCH 2/4] drm/tilcdc fixing i2c/slave initialization race
@@ -29,5 +29,5 @@ index 923c279..595068b 100644
  	if (!i2c_node) {
  		dev_err(&pdev->dev, "could not get i2c bus node\n");
 -- 
-1.8.4.rc3
+1.8.2.1
 

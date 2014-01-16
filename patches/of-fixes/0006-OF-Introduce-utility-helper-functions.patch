@@ -1,4 +1,4 @@
-From a288b62e15091a1a611c858488958359f9a2d730 Mon Sep 17 00:00:00 2001
+From 995b38c0b3ab4208e828257fc67fb4853a02cc4d Mon Sep 17 00:00:00 2001
 From: Pantelis Antoniou <panto@antoniou-consulting.com>
 Date: Thu, 3 Jan 2013 12:11:31 +0200
 Subject: [PATCH 6/8] OF: Introduce utility helper functions
@@ -34,7 +34,7 @@ index ed9660a..26de2ed 100644
  obj-$(CONFIG_OF_ADDRESS)  += address.o
 diff --git a/drivers/of/util.c b/drivers/of/util.c
 new file mode 100644
-index 0000000..4701825
+index 0000000..5117e2b
 --- /dev/null
 +++ b/drivers/of/util.c
 @@ -0,0 +1,252 @@
@@ -359,5 +359,5 @@ index a56c450..9d69bd2 100644
 +
  #endif /* _LINUX_OF_H */
 -- 
-1.8.4.rc3
+1.8.2.1
 

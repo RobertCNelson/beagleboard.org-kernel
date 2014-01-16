@@ -221,6 +221,11 @@ cpufreq () {
 	${git} "${DIR}/patches/cpufreq/0005-hack-boneblack-enable-1Ghz-operation.patch"
 }
 
+pru () {
+	echo "dir: pru"
+	${git} "${DIR}/patches/pru/0001-These-are-the-patches-necessary-for-enabling-the-PRU.patch"
+}
+
 ###
 omap_next_dt
 dma_devel
@@ -243,5 +248,6 @@ cape_import
 audio
 drm
 cpufreq
+pru
 
 echo "patch.sh ran successful"

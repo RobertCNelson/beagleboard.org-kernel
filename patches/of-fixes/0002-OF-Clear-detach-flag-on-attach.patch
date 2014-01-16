@@ -1,4 +1,4 @@
-From 7cbea2461ca5ea3a8a734ecfae07e1b2608e57d3 Mon Sep 17 00:00:00 2001
+From b63b1ac73030e2e61aff939e9efc62572fb77e9a Mon Sep 17 00:00:00 2001
 From: Pantelis Antoniou <panto@antoniou-consulting.com>
 Date: Wed, 27 Feb 2013 11:26:34 +0200
 Subject: [PATCH 2/8] OF: Clear detach flag on attach
@@ -24,5 +24,5 @@ index 865d3f6..381c891 100644
  
  	of_add_proc_dt_entry(np);
 -- 
-1.8.4.rc3
+1.8.2.1
 

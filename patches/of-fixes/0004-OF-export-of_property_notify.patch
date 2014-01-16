@@ -1,4 +1,4 @@
-From 3b141087198aa465bea54ce51ad71f1dcf895d88 Mon Sep 17 00:00:00 2001
+From a8fb0ad79cf6c3501832c0e023d65a908ca37d92 Mon Sep 17 00:00:00 2001
 From: Pantelis Antoniou <panto@antoniou-consulting.com>
 Date: Thu, 3 Jan 2013 11:46:39 +0200
 Subject: [PATCH 4/8] OF: export of_property_notify
@@ -60,5 +60,5 @@ index 786c4f6..6fec255 100644
  extern int of_alias_get_id(struct device_node *np, const char *stem);
  
 -- 
-1.8.4.rc3
+1.8.2.1
 

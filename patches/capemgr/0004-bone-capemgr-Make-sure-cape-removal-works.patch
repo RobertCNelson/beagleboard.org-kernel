@@ -1,4 +1,4 @@
-From 7bff62327a494cbc6e8264ec297f29ea17c2650c Mon Sep 17 00:00:00 2001
+From e398ffda5e673802516f1df1796e5bd9fb007309 Mon Sep 17 00:00:00 2001
 From: Pantelis Antoniou <panto@antoniou-consulting.com>
 Date: Wed, 27 Feb 2013 11:32:20 +0200
 Subject: [PATCH 04/11] bone-capemgr: Make sure cape removal works.
@@ -109,5 +109,5 @@ index 6796063..0200be2 100644
  
  	bone_capemgr_info_sysfs_unregister(info);
 -- 
-1.8.4.rc3
+1.8.2.1
 

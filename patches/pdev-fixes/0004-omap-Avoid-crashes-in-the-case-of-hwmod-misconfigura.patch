@@ -1,4 +1,4 @@
-From cc942822686d6ef3e6068da4140a042896de3a0a Mon Sep 17 00:00:00 2001
+From 30ac7dacde8ffdb854b85dbe4da9a54a8ece9a11 Mon Sep 17 00:00:00 2001
 From: Pantelis Antoniou <panto@antoniou-consulting.com>
 Date: Tue, 8 Jan 2013 15:19:52 +0200
 Subject: [PATCH 4/4] omap: Avoid crashes in the case of hwmod misconfiguration
